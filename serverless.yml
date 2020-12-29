@@ -1,0 +1,40 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: hello-world
+
+frameworkVersion: '2'
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+# The `functions` block defines what code to deploy
+functions:
+  userFunction:
+    handler: index.server
+    events:
+      - http:
+          path: user/create
+          method: post
+          cors: true
+      - http:
+          path: user/delete
+          method: delete
+          cors: true 
+      - http:
+          path: user/update
+          method: put
+          cors: true 
+  heartBeatFunction:
+    handler: index.server
+    events:
+      - http:
+          path: heartbeat
+          method: get
+          cors: true                       

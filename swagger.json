@@ -1,0 +1,179 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Web Dev Root",
+        "description": "Web Dev Root",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Heartbeat",
+            "description": "Check service is live or not?"
+        },
+        {
+            "name": "UserCrud",
+            "description": "User End-point"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user/create": {
+            "post": {
+                "tags": [
+                    "UserCrud"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/createUser"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/user/delete": {
+            "delete": {
+                "tags": [
+                    "UserCrud"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "userId is mandatory",
+                        "schema": {
+                            "$ref": "#/definitions/userId"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/user/update": {
+            "put": {
+                "tags": [
+                    "UserCrud"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "All fields are mandatory",
+                        "schema": {
+                            "$ref": "#/definitions/userUpdate"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/heartbeat": {
+            "get": {
+                "tags": [
+                    "Heartbeat"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "No parameter needed"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "createUser": {
+            "required": [
+                "name",
+                "roll",
+                "country"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "roll": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            }
+        },
+        "userUpdate": {
+            "required": [
+                "userId",
+                "userName",
+                "userCountry"
+            ],
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "userCountry": {
+                    "type": "string"
+                }
+            }
+        },
+        "userId": {
+            "required": [
+                "userId"
+            ],
+            "properties": {
+                "userId": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

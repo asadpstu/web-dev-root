@@ -1,0 +1,6 @@
+{
+    "mongoUrl": "mongoUrl",
+    "database": "database",
+    "app_dbuser": "app_dbuser",
+    "app_dbpassword": "app_dbpassword"
+}

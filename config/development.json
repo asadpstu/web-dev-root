@@ -1,0 +1,6 @@
+{
+    "mongoUrl": "cluster0.fweuu.mongodb.net",
+    "database": "webdevroot",
+    "app_dbuser": "webdevrootlamda",
+    "app_dbpassword": "webdevrootlamda12345"
+}
