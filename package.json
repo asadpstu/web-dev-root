@@ -13,7 +13,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.11.9",
+    "mysql": "^2.18.1",
     "serverless-http": "^2.6.0",
+    "siege": "^0.2.0",
     "swagger-ui-express": "^4.1.6"
   }
 }

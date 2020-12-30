@@ -37,4 +37,15 @@ functions:
       - http:
           path: heartbeat
           method: get
-          cors: true                       
+          cors: true 
+  mysqlUserFunction:
+    handler: index.server
+    events:
+      - http:
+          path: mysql/user/get
+          method: get
+          cors: true 
+      - http:
+          path: mysql/user/create
+          method: post
+          cors: true                                   

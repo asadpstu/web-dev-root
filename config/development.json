@@ -2,5 +2,10 @@
     "mongoUrl": "cluster0.fweuu.mongodb.net",
     "database": "webdevroot",
     "app_dbuser": "webdevrootlamda",
-    "app_dbpassword": "webdevrootlamda12345"
+    "app_dbpassword": "webdevrootlamda12345",
+    "app_mysql_db": "webdevroot",
+    "app_mysql_user": "admin",
+    "app_mysql_password": "webdevrootmysql",
+    "app_mysql_host": "webdevrootmysql.cpthe5dera7j.us-east-1.rds.amazonaws.com",
+    "port": 4000
 }

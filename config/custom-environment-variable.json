@@ -2,5 +2,10 @@
     "mongoUrl": "mongoUrl",
     "database": "database",
     "app_dbuser": "app_dbuser",
-    "app_dbpassword": "app_dbpassword"
+    "app_dbpassword": "app_dbpassword",
+    "app_mysql_db": "app_mysql_db",
+    "app_mysql_user": "app_mysql_user",
+    "app_mysql_password": "app_mysql_password",
+    "app_mysql_host": "app_mysql_host",
+    "port": "port"
 }

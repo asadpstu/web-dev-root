@@ -28,7 +28,31 @@ Step 9: After deployment inside our terminal we'll see
   -------------
   endpoints:
   -------------
-  GET -    https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/heartbeat
-  POST -   https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/create
-  DELETE - https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/delete
-  PUT -    https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/update
+    ** heartBeatFunction: hello-world-dev-heartBeatFunction **
+    GET -    https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/heartbeat 
+    
+    ** userFunction: hello-world-dev-userFunction ** MongoDB
+    POST -   https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/create  
+    DELETE - https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/delete  
+    PUT -    https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/user/update  
+    
+    ** mysqlUserFunction: hello-world-dev-mysqlUserFunction ** Mysql
+    GET -    https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/mysql/user/get  
+    POST -   https://z2pz1imyij.execute-api.us-east-1.amazonaws.com/dev/mysql/user/create 
+
+
+
+
+Step 10:  To compare connnection pooling on local machine follow the instruction =>
+          => Open attack.js file. There are two cases to test. [Case 1 and Case 2] 
+             Do necessary changes to test. Don't uncomment both case at a time. 
+          
+          => 1. Terminal one 
+             command :  node index.js 
+          => 2. Terminal two
+             command :  node attack.js
+          
+          Note : inside Terminal one,
+             For Case 1 => We can see same repeating connection ID. That means connection pooling works.
+             For Case 2 => We can see exceptions. That means it is not working with raw connection string.
+                

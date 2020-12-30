@@ -19,6 +19,10 @@
         {
             "name": "UserCrud",
             "description": "User End-point"
+        },
+        {
+            "name": "MysqlConnectionPooling",
+            "description": "Mysql connection pooling"
         }
     ],
     "schemes": [
@@ -115,6 +119,52 @@
                         "name": "body",
                         "in": "body",
                         "description": "No parameter needed"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/mysql/user/get": {
+            "get": {
+                "tags": [
+                    "MysqlConnectionPooling"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "No parameter needed"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/mysql/user/create": {
+            "get": {
+                "tags": [
+                    "MysqlConnectionPooling"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/createUser"
+                        }
                     }
                 ],
                 "produces": [
