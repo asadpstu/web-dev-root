@@ -5,7 +5,7 @@ const config = require('config');
 Case 1 : 
 For testing mysql connection pooling
 */
-siege().on(config.get('port')).concurrent(10).get('/mysql/user/get').attack();
+siege().on(config.get('port')).concurrent(100).get('/mysql/user/get').attack();
 
 /*
   Case 2 :

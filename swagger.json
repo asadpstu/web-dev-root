@@ -154,7 +154,7 @@
             }
         },
         "/mysql/user/create": {
-            "get": {
+            "post": {
                 "tags": [
                     "MysqlConnectionPooling"
                 ],

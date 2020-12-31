@@ -1,4 +1,4 @@
-module.exports.getUsers = () => new Promise((resolve, reject) => {
+getUsers = () => new Promise((resolve, reject) => {
     // ** connectToMySql ** this is a global variable. I've declared it inside index.js file.
     connectToMySql.getConnection((err, connection) => {
         if (err) reject(err);
@@ -12,7 +12,7 @@ module.exports.getUsers = () => new Promise((resolve, reject) => {
 });
 
 
-module.exports.createUser = (req) => new Promise((resolve, reject) => {
+createUser = (req) => new Promise((resolve, reject) => {
     // ** connectToMySql ** this is a global variable. I've declared it inside index.js file.
     connectToMySql.getConnection((err, connection) => {
         if (err) reject(err);
@@ -29,3 +29,16 @@ module.exports.createUser = (req) => new Promise((resolve, reject) => {
         });
     });
 });
+
+
+module.exports.getusers = (req, res) => {
+    getUsers().then(users => {
+        console.log(users);
+        res.send(users)
+    }).catch(err => console.error(err));
+}
+
+
+module.exports.createuser = (req, res) => {
+    createUser(req).then(users => res.send(users)).catch(err => console.error(err));
+}
